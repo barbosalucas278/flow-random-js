@@ -1,12 +1,12 @@
 {
   "name": "@issos1993/flow-random",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A library that help to flow control by a random number",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest",
-    "build": "babel src -d dist",
-    "start": "npm run build && http-server -p 8080",
+    "test": "jest --watchAll",
+    "build": "tsc",
+    "start": "tsc && node ./updateImports.js && http-server -p 8080",
     "lint": "eslint ."
   },
   "repository": {
@@ -27,11 +27,33 @@
   "homepage": "https://github.com/barbosalucas278/flow-random-js#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-typescript": "^7.23.3",
+    "@jest/globals": "^29.7.0",
+    "babel-jest": "^29.7.0",
     "eslint": "^8.2.0",
     "http-server": "^14.1.1",
-    "jest": "^27.4.7",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
