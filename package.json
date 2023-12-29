@@ -1,6 +1,6 @@
 {
   "name": "@issos1993/flow-random",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library that help to flow control by a random number",
   "main": "./src/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "probability"
   ],
   "author": "Lucas Barbosa <barbosalucasroberto@gmail.com>",
-  "license": "SEE LICENSE IN LICENCE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/barbosalucas278/flow-random-js/issues"
   },
