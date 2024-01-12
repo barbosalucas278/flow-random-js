@@ -5,9 +5,7 @@ const DEFAULT_PROBABILITY: number = 100;
 const MIN_RANDOM_LIMIT: number = 0;
 const MAX_RANDOM_LIMIT: number = 100;
 
-export const flowRandom = (
-  probability: number = DEFAULT_PROBABILITY
-): boolean => {
+const flowRandom = (probability: number = DEFAULT_PROBABILITY): boolean => {
   const limits: Limits = {
     min: MIN_RANDOM_LIMIT,
     max: MAX_RANDOM_LIMIT,
@@ -19,4 +17,8 @@ export const flowRandom = (
   const adjustedProbability: number = (range * probability) / 100; // Calcula la probabilidad ajustada dentro del rango
 
   return randomNumber <= adjustedProbability;
+};
+
+module.exports = {
+  flowRandom,
 };

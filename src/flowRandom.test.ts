@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { flowRandom } from "./flowRandom";
+const { flowRandom } = require("./index");
 
 describe("Flow Random Module", () => {
   const TRIES: number = 1000;
