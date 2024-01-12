@@ -1,6 +1,6 @@
 {
   "name": "@issos1993/flow-random",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A library that help to flow control by a random number",
   "main": "./src/index.ts",
   "scripts": {
