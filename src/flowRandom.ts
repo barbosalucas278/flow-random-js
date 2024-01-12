@@ -18,7 +18,4 @@ const flowRandom = (probability: number = DEFAULT_PROBABILITY): boolean => {
 
   return randomNumber <= adjustedProbability;
 };
-
-module.exports = {
-  flowRandom,
-};
+export default flowRandom;

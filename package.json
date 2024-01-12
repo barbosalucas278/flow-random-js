@@ -55,5 +55,8 @@
       "json",
       "node"
     ]
+  },
+  "dependencies": {
+    "@issos1993/flow-random": "^1.1.0"
   }
 }
