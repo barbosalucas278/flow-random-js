@@ -1,6 +1,6 @@
 {
   "name": "@issos1993/flow-random",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A library that help to flow control by a random number",
   "main": "index.js",
   "scripts": {
@@ -56,8 +56,5 @@
       "json",
       "node"
     ]
-  },
-  "dependencies": {
-    "@issos1993/flow-random": "^1.1.2"
   }
 }
