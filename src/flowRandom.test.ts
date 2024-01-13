@@ -1,5 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import flowRandom from "./flowRandom";
+
+
 describe("Flow Random Module", () => {
   const TRIES: number = 1000;
 

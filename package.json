@@ -1,8 +1,8 @@
 {
   "name": "@issos1993/flow-random",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A library that help to flow control by a random number",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
     "build": "tsc",
@@ -19,6 +19,7 @@
     "javascript",
     "probability"
   ],
+  "type": "module",
   "author": "Lucas Barbosa <barbosalucasroberto@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -57,6 +58,6 @@
     ]
   },
   "dependencies": {
-    "@issos1993/flow-random": "^1.1.0"
+    "@issos1993/flow-random": "^1.1.2"
   }
 }

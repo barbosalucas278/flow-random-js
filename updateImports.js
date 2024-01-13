@@ -1,10 +1,10 @@
 // scripts/updateImports.js
-const fs = require("fs");
+import { readdir, readFile, writeFile } from "fs";
 
 const directoryPath = "./dist"; // Ruta a tu directorio de salida de TypeScript
 
 // Lee los archivos en el directorio y actualiza los imports
-fs.readdir(directoryPath, (err, files) => {
+readdir(directoryPath, (err, files) => {
   if (err) {
     console.error("Error al leer directorio:", err);
     return;
@@ -13,7 +13,7 @@ fs.readdir(directoryPath, (err, files) => {
   files.forEach((file) => {
     if (file.endsWith(".js")) {
       const filePath = `${directoryPath}/${file}`;
-      fs.readFile(filePath, "utf8", (err, data) => {
+      readFile(filePath, "utf8", (err, data) => {
         if (err) {
           console.error("Error al leer archivo:", err);
           return;
@@ -26,7 +26,7 @@ fs.readdir(directoryPath, (err, files) => {
         );
 
         // Escribe los cambios en el archivo
-        fs.writeFile(filePath, updatedContent, "utf8", (err) => {
+        writeFile(filePath, updatedContent, "utf8", (err) => {
           if (err) {
             console.error("Error al escribir archivo:", err);
           }
