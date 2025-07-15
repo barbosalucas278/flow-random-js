@@ -4,7 +4,7 @@
   "description": "A library that help to flow control by a random number",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --coverage",
     "build": "tsc",
     "start": "tsc && node ./updateImports.js && http-server -p 8080",
     "lint": "eslint ."

@@ -45,7 +45,7 @@ describe("Random Helper", () => {
     expect(resultMax).toBe(true);
   });
 
-  test("If min and max param has declared, the random number has been between min/max", () => {
+  test("If min and max param wasn't declare, the random number has been between min/max", () => {
     const MAX_LIMIT: number = 100;
     const MIN_LIMIT: number = 0;
     const randomNumbers: Array<number> = [];
@@ -70,13 +70,31 @@ describe("Random Helper", () => {
     expect(resultMax).toBe(true);
   });
 
-  test("If min and max param has not declared, the random number has been between min/max default", () => {
+  test("If min and max param wasn't declare, the random number has been between min/max default", () => {
     const MAX_LIMIT_DEFAULT: number = Number.MAX_SAFE_INTEGER;
     const MIN_LIMIT_DEFAULT: number = 0;
     const randomNumbers: Array<number> = [];
 
     for (let index: number = 0; index < TRIES; index++) {
       const randomNumber: number = getPositiveRandomNumber();
+      randomNumbers.push(randomNumber);
+    }
+    const result: boolean = randomNumbers.every(
+      (number) => number >= MIN_LIMIT_DEFAULT && number <= MAX_LIMIT_DEFAULT
+    );
+
+    expect(randomNumbers).toHaveLength(TRIES);
+    expect(result).toBe(true);
+  });
+
+  test("If min and max param was cero, the random number has been between min/max default", () => {
+    const MAX_LIMIT_DEFAULT: number = Number.MAX_SAFE_INTEGER;
+    const MIN_LIMIT_DEFAULT: number = 0;
+    const randomNumbers: Array<number> = [];
+    const limits: Limits = { min: 0, max: 0 };
+    
+    for (let index: number = 0; index < TRIES; index++) {
+      const randomNumber: number = getPositiveRandomNumber(limits);
       randomNumbers.push(randomNumber);
     }
     const result: boolean = randomNumbers.every(
