@@ -1,0 +1,42 @@
+# Nombre del workflow que aparece en la pestaña "Actions"
+name: Publish to NPM
+
+# Este workflow se ejecuta cuando se hace push a la rama main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    # Nombre interno del job
+    name: Publish NPM Package
+
+    # Sistema operativo del runner donde se ejecutan los comandos
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Clona el repositorio en el runner
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Paso 2: Instala Node.js y configura el registro de NPM
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'              # Versión de Node.js a usar
+          registry-url: 'https://registry.npmjs.org/'  # URL del registro de NPM
+
+      # Paso 3: Instala las dependencias del proyecto
+      - name: Install dependencies
+        run: npm install
+
+      # Paso 4: Compila la librería (si tenés un script de build en package.json)
+      - name: Build
+        run: npm run build # Asegurate de tener un script "build"
+
+      # Paso 5: Publica el paquete en NPM
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Token secreto para autenticar con NPM
